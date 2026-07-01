@@ -3,305 +3,358 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edgine Technology di Francesco Alì</title>
+<title>Edgine Studio · Francesco Alì</title>
+<meta name="description" content="Edgine Studio — AI Engineering, Data Science e Ottimizzazione a Catania. Di Francesco Alì.">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  /*
-  --bg: #0e0e10;
-  --bg2: #16161a;
-  --bg3: #1e1e24;
-  --card: #1e1e24;
-  --card2: #26262e;
-  --accent: #7f77dd;
-  --accent2: #5dcaa5;
-  --text: #f0eff8;
-  --text2: #a09fba;
-  --text3: #6a6980;
-  --border: rgba(255,255,255,0.07);
-  --border2: rgba(255,255,255,0.12);
-  --radius: 12px;
-  --radius-sm: 8px;
-  */
-  --bg:       #f5f4f1;
-  --bg2:      #edeae4;
-  --card:     #ffffff;
-  --card2:    #f0ede8;
-
-  --accent:   #c0522a;   /* ruggine */
-  --accent2:  #4a90b8;   /* azzurro cielo */
-
-  --text:     #1e1c1a;
-  --text2:    #5a534c;
-  --text3:    #9e9488;
-
-  --border:   rgba(0,0,0,0.07);
-  --border2:  rgba(0,0,0,0.13);
-
-  --radius:   12px;
-  --radius-sm:8px;
+  --bg:#f3f8fb;--card:#fff;--card2:#eaf4f9;
+  --accent:#e0571a;--accent2:#00bfa8;--accent-pale:#fff4ef;
+  --text:#1e1e1e;--text2:#515151;--text3:#999;
+  --border:rgba(0,0,0,0.08);--radius:10px;--radius-sm:6px;
 }
--->
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:15px}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-nav{position:sticky;top:0;z-index:100;background:rgba(14,14,16,0.85);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 clamp(1rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;height:52px}
-.nav-logo{font-size:15px;font-weight:600;color:var(--text);letter-spacing:-0.3px}
-.nav-links{display:flex;align-items:center;gap:1.5rem}
-.nav-links a{font-size:13px;color:var(--text2);transition:color .2s}
-.nav-links a:hover{color:var(--text);text-decoration:none}
-.lang-btn{background:var(--card2);border:0.5px solid var(--border2);color:var(--text2);font-size:12px;font-weight:500;padding:4px 10px;border-radius:20px;cursor:pointer;transition:all .2s}
-.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
-.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:4rem clamp(1rem,5vw,4rem);max-width:960px;margin:0 auto}
-.hero-eyebrow{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent2);margin-bottom:1.2rem}
-.hero h1{font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;letter-spacing:-1.5px;line-height:1.1;color:var(--text);margin-bottom:1.2rem}
-.hero h1 span{color:var(--accent)}
-.hero-sub{font-size:clamp(1rem,2vw,1.15rem);color:var(--text2);max-width:560px;margin-bottom:2.5rem;line-height:1.75}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:3rem}
-.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:var(--radius-sm);font-size:14px;font-weight:500;cursor:pointer;border:none;transition:all .2s}
-.btn-primary{background:var(--accent);color:#fff}
-.btn-primary:hover{opacity:.88;text-decoration:none;color:#fff}
-.btn-ghost{background:transparent;border:0.5px solid var(--border2);color:var(--text2)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
-.hero-meta{display:flex;flex-wrap:wrap;gap:1.5rem}
-.hero-meta span{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text3)}
-.hero-meta i{font-size:15px;color:var(--accent)}
-section{padding:4rem clamp(1rem,5vw,4rem);max-width:960px;margin:0 auto}
-.section-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:2rem}
-.section-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;letter-spacing:-0.5px;color:var(--text);margin-bottom:.5rem}
-.section-sub{color:var(--text2);margin-bottom:2.5rem;max-width:580px}
-hr.sep{border:none;border-top:0.5px solid var(--border);margin:0 clamp(1rem,5vw,4rem)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.about-stat{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem}
-.about-stat .stat-num{font-size:2rem;font-weight:700;color:var(--accent);letter-spacing:-1px}
-.about-stat .stat-lbl{font-size:13px;color:var(--text2);margin-top:2px}
-.about-text{color:var(--text2);line-height:1.8;max-width:720px;margin-bottom:2rem}
-.exp-card{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:1rem;transition:border-color .2s}
-.exp-card:hover{border-color:var(--border2)}
-.exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem}
-.exp-role{font-size:15px;font-weight:600;color:var(--text)}
-.exp-company{font-size:13px;color:var(--accent);margin-top:2px}
-.exp-date{font-size:12px;color:var(--text3);background:var(--card2);padding:3px 10px;border-radius:20px;white-space:nowrap}
-.exp-item{font-size:13px;color:var(--text2);margin-bottom:.4rem;padding-left:1rem;position:relative;line-height:1.6}
-.exp-item::before{content:'';position:absolute;left:0;top:.5em;width:4px;height:4px;border-radius:50%;background:var(--accent2)}
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-.proj-card{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
-.proj-card:hover{border-color:var(--border2);transform:translateY(-2px)}
-.proj-tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.5px;padding:3px 8px;border-radius:4px;margin-bottom:.9rem}
-.tag-freelance{background:rgba(127,119,221,.15);color:#afa9ec}
-.tag-academic{background:rgba(93,202,165,.12);color:#5dcaa5}
-.proj-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:.5rem;line-height:1.4}
-.proj-desc{font-size:13px;color:var(--text2);line-height:1.6;flex:1}
-.proj-links{display:flex;gap:.75rem;margin-top:1rem;padding-top:.75rem;border-top:0.5px solid var(--border)}
-.proj-links a{font-size:12px;color:var(--text3);display:flex;align-items:center;gap:4px;transition:color .2s}
-.proj-links a:hover{color:var(--accent);text-decoration:none}
-.proj-stack{font-size:12px;color:var(--text3);display:flex;align-items:center;gap:4px}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.skill-group{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem}
-.skill-group-title{font-size:12px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--accent2);margin-bottom:.9rem}
-.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
-.skill-tag{background:var(--card2);border:0.5px solid var(--border2);color:var(--text2);font-size:12px;padding:3px 9px;border-radius:var(--radius-sm)}
-.skill-tag.core{border-color:rgba(127,119,221,.35);color:#afa9ec}
-.pub-card{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:.75rem;transition:border-color .2s}
-.pub-card:hover{border-color:var(--border2)}
-.pub-authors{font-size:12px;color:var(--text3);margin-bottom:.3rem}
-.pub-title{font-size:14px;color:var(--text);margin-bottom:.6rem;line-height:1.5}
-.pub-link{font-size:12px;color:var(--accent);display:inline-flex;align-items:center;gap:4px}
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
-.contact-card{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.25rem;text-align:center;transition:border-color .2s}
-.contact-card:hover{border-color:var(--accent)}
-.contact-card i{font-size:22px;color:var(--accent);margin-bottom:.5rem;display:block}
-.contact-card .cc-label{font-size:11px;color:var(--text3);margin-bottom:.25rem}
-.contact-card .cc-val{font-size:13px;color:var(--text2)}
-footer{border-top:0.5px solid var(--border);padding:1.5rem clamp(1rem,5vw,4rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
-footer p{font-size:12px;color:var(--text3)}
-@media(max-width:600px){.about-grid{grid-template-columns:1fr 1fr}nav .nav-links a:not(.lang-btn){display:none}}
-</style>
 
+nav{position:sticky;top:0;z-index:100;background:rgba(243,248,251,0.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 clamp(1rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;height:50px}
+.nav-logo{font-size:13px;font-weight:800;color:var(--text);letter-spacing:1.5px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:1.5rem}
+.nav-links a{font-size:12.5px;color:var(--text3);transition:color .2s}
+.nav-links a:hover{color:var(--accent2);text-decoration:none}
+.lang-btn{background:none;border:1px solid var(--border);color:var(--text3);font-size:11px;padding:3px 10px;border-radius:20px;cursor:pointer;transition:all .2s}
+.lang-btn:hover{border-color:var(--accent2);color:var(--accent2)}
+
+.hero{padding:5rem clamp(1rem,5vw,4rem) 3.5rem;max-width:860px;margin:0 auto}
+.hero-title{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:800;letter-spacing:-1.5px;line-height:1.05;color:var(--text);margin-bottom:.4rem}
+.hero-title span{color:var(--accent);font-weight:400;font-size:.55em;letter-spacing:0;display:block;margin-top:.3rem}
+.hero-tagline{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent2);margin:.9rem 0 2rem}
+.ctas{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:var(--radius-sm);font-size:13px;font-weight:500;border:none;cursor:pointer;transition:all .2s;text-decoration:none}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{opacity:.88;color:#fff;text-decoration:none}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text2)}.btn-ghost:hover{border-color:var(--accent2);color:var(--accent2);text-decoration:none}
+
+section{padding:3.5rem clamp(1rem,5vw,4rem);max-width:960px;margin:0 auto}
+.s-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent2);margin-bottom:1.25rem}
+.s-title{font-size:clamp(1.35rem,3vw,1.85rem);font-weight:700;letter-spacing:-.3px;color:var(--text);margin-bottom:.6rem}
+.s-sub{color:var(--text2);max-width:640px;line-height:1.8;margin-bottom:2rem}
+hr.sep{border:none;border-top:1.5px solid var(--accent2);opacity:.2;margin:0 clamp(1rem,5vw,4rem)}
+
+/* ABOUT */
+.about-body{color:var(--text2);line-height:1.85;max-width:720px;margin-bottom:1.25rem}
+.pillars{display:flex;gap:1rem;flex-wrap:wrap;margin:2rem 0}
+.pillar{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--accent2);border-radius:var(--radius);padding:1rem 1.25rem;flex:1;min-width:130px}
+.pillar-word{font-size:15px;font-weight:700;color:var(--text);text-transform:capitalize}
+.pillar-sub{font-size:11.5px;color:var(--text3);margin-top:3px}
+
+/* USE CASES */
+.uc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.75rem}
+.uc-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.2rem}
+.uc-sector{display:block;font-size:10.5px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.35rem}
+.uc-card p{font-size:13px;color:var(--text2);line-height:1.6}
+.uc-footer{margin-top:1.5rem;font-size:13.5px;color:var(--text2);font-style:italic}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:1.25rem}
+.svc-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem;display:flex;flex-direction:column;gap:.85rem;transition:border-color .2s}
+.svc-card:hover{border-color:var(--accent2)}
+.svc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
+.svc-tag{font-size:9.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:2px 7px;border-radius:3px;white-space:nowrap;margin-top:3px}
+.tag-retail{background:rgba(224,87,26,.1);color:var(--accent)}
+.tag-ai{background:rgba(0,191,168,.1);color:var(--accent2)}
+.tag-data{background:rgba(30,30,30,.07);color:var(--text3)}
+.svc-title{font-size:15px;font-weight:700;color:var(--text)}
+.svc-commercial{font-size:13.5px;color:var(--text2);line-height:1.7}
+.svc-tech{background:#f0fdfb;border-left:2.5px solid var(--accent2);padding:.65rem .9rem;border-radius:0 6px 6px 0}
+.tech-lbl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent2);display:block;margin-bottom:.25rem}
+.svc-tech p{font-size:12px;color:var(--text3);line-height:1.6}
+.svc-perfect{display:flex;align-items:flex-start;gap:.5rem;background:var(--accent-pale);border-radius:var(--radius-sm);padding:.55rem .85rem}
+.svc-perfect i{color:var(--accent);font-size:14px;flex-shrink:0;margin-top:1px}
+.svc-perfect span{font-size:12.5px;color:var(--text2);line-height:1.5}
+.svc-links{display:flex;gap:.75rem;padding-top:.6rem;border-top:1px solid var(--border)}
+.svc-links a{font-size:12px;color:var(--text3);display:flex;align-items:center;gap:4px}
+.svc-links a:hover{color:var(--accent2);text-decoration:none}
+
+/* RESEARCH */
+.exp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:1rem;transition:border-color .2s}
+.exp-card:hover{border-color:var(--accent2)}
+.exp-role{font-size:15px;font-weight:700;color:var(--text);margin-bottom:.2rem}
+.exp-company{font-size:12px;color:var(--accent2);margin-bottom:.85rem}
+.exp-item{font-size:13px;color:var(--text2);margin-bottom:.4rem;padding-left:1rem;position:relative;line-height:1.6}
+.exp-item::before{content:'';position:absolute;left:0;top:.55em;width:4px;height:4px;border-radius:50%;background:var(--accent2)}
+.acad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1.5rem}
+.acad-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem}
+.acad-tag{font-size:9.5px;font-weight:700;color:var(--accent2);text-transform:uppercase;letter-spacing:.8px;display:block;margin-bottom:.4rem}
+.acad-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:.35rem}
+.acad-desc{font-size:12.5px;color:var(--text2);line-height:1.6}
+.acad-stack{font-size:11px;color:var(--text3);margin-top:.6rem}
+
+/* SKILLS */
+.skills-wrap{display:flex;flex-wrap:wrap;gap:.5rem}
+.sk{background:var(--card);border:1px solid var(--border);color:var(--text2);font-size:12px;padding:4px 10px;border-radius:var(--radius-sm)}
+.sk.core{border-color:rgba(224,87,26,.35);color:var(--accent)}
+
+/* PUBS */
+.pub-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.4rem;margin-bottom:.75rem;transition:border-color .2s}
+.pub-card:hover{border-color:var(--accent2)}
+.pub-authors{font-size:11px;color:var(--text3);margin-bottom:.25rem}
+.pub-title{font-size:13.5px;color:var(--text);margin-bottom:.5rem;line-height:1.5}
+.pub-link{font-size:12px;color:var(--accent2);display:inline-flex;align-items:center;gap:4px}
+
+/* CONTACT */
+.ct-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem}
+.ct-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem;text-align:center;transition:border-color .2s}
+.ct-card:hover{border-color:var(--accent)}
+.ct-card i{font-size:20px;color:var(--accent);display:block;margin-bottom:.4rem}
+.ct-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.2rem}
+.ct-val{font-size:12.5px;color:var(--text2)}
+
+footer{border-top:1px solid var(--border);padding:1.25rem clamp(1rem,5vw,4rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+footer p{font-size:11px;color:var(--text3)}
+
+@media(max-width:640px){
+  .svc-grid{grid-template-columns:1fr}
+  nav .nav-links a:not(.lang-btn){display:none}
+}
+</style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-logo">FA</span>
+  <span class="nav-logo">Edgine</span>
   <div class="nav-links">
-    <a href="#about" data-lang="it">Profilo</a>
+    <a href="#about" data-lang="it">Chi siamo</a>
     <a href="#about" data-lang="en" style="display:none">About</a>
-    <a href="#experience" data-lang="it">Deep Tech</a>
-    <a href="#experience" data-lang="en" style="display:none">Deep Tech</a>
-    <a href="#projects" data-lang="it">Progetti</a>
-    <a href="#projects" data-lang="en" style="display:none">Projects</a>
-    <a href="#skills" data-lang="it">Competenze</a>
-    <a href="#skills" data-lang="en" style="display:none">Skills</a>
+    <a href="#services" data-lang="it">Servizi</a>
+    <a href="#services" data-lang="en" style="display:none">Services</a>
+    <a href="#research" data-lang="it">Ricerca</a>
+    <a href="#research" data-lang="en" style="display:none">Research</a>
     <a href="#contact" data-lang="it">Contatti</a>
     <a href="#contact" data-lang="en" style="display:none">Contact</a>
-
     <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-  <p class="hero-eyebrow">AI Solutions Architect and Consultant</p>
-  <h1 data-lang="it"> Edgine Studio <br> <span> di Francesco Alì</span></h1>
-  <h1 data-lang="en" style="display:none">Edgine Studio <br> <span> by Francesco Alì</span></h1>
-  <p class="hero-sub" data-lang="it">Sviluppiamo sistemi di intelligenza artificiale per imprese e istituti di ricerca.</p>
-  <p class="hero-sub" data-lang="en" style="display:none">We develop AI systems for businesses and research institutions.</p>
-  
-  <div class="hero-ctas">
-    <a href="mailto:francescoali@edgine.it" class="btn btn-primary"><i class="ti ti-mail"></i><span data-lang="it">Scrivimi</span><span data-lang="en" style="display:none">Get in touch</span></a>
+  <h1 class="hero-title">
+    Edgine Studio
+    <span data-lang="it">di Francesco Alì</span>
+    <span data-lang="en" style="display:none">by Francesco Alì</span>
+  </h1>
+  <p class="hero-tagline">Engineering at the Edge</p>
+  <div class="ctas">
+    <a href="mailto:francescoali@edgine.it" class="btn btn-primary"><i class="ti ti-mail"></i>francescoali@edgine.it</a>
     <a href="https://www.linkedin.com/in/francesco-al%C3%AC" target="_blank" class="btn btn-ghost"><i class="ti ti-brand-linkedin"></i>LinkedIn</a>
     <a href="https://github.com/francescoali" target="_blank" class="btn btn-ghost"><i class="ti ti-brand-github"></i>GitHub</a>
   </div>
-  
 </div>
 
 <hr class="sep">
 
+<!-- ABOUT -->
 <section id="about">
-  <p class="section-label"><span data-lang="it">Chi siamo</span><span data-lang="en" style="display:none">About</span></p>
-  <h2 class="section-title"><span data-lang="it">Consulenza e collaborazione strategica</span><span data-lang="en" style="display:none">Consulting and Strategic Partnership</span></h2>
-  <p class="section-sub">
-    <span data-lang="it">Affondiamo le nostre radici nella scienza </span>
-    <span data-lang="en" style="display:none">With a foundation in Physics and a cum laude Master's in Data Science, I work as a freelancer and consultant to accelerate the path from problem to production.</span>
-  </p>
-  <p class="about-text" data-lang="it">Aiuto aziende e istituti di ricerca a scalare il loro impatto attraverso sistemi data-driven: analytics, forecasting e ottimizzazione operativa. Ho esperienza trasversale in hospitality, retail e ricerca scientifica — dall'automazione HR all'analisi di onde gravitazionali con metodi bayesiani HPC.</p>
-  <p class="about-text" data-lang="en" style="display:none">I help businesses and research institutions scale their impact through data-driven systems spanning analytics, forecasting, and operational optimization. My cross-sector experience covers hospitality, retail, and scientific research — from HR automation to gravitational wave analysis with Bayesian HPC methods.</p>
-  <div class="about-grid">
-    <div class="about-stat"><div class="stat-num">3</div><div class="stat-lbl"><span data-lang="it">Pubblicazioni scientifiche</span><span data-lang="en" style="display:none">Scientific publications </span></div></div>
-    <div class="about-stat"><div class="stat-num">5+</div><div class="stat-lbl"><span data-lang="it">Progetti freelance consegnati</span><span data-lang="en" style="display:none">Freelance projects delivered</span></div></div>
-    <div class="about-stat"><div class="stat-num">3</div><div class="stat-lbl"><span data-lang="it">Settori: hospitality, retail, ricerca</span><span data-lang="en" style="display:none">Sectors: hospitality, retail, research</span></div></div>
-    <div class="about-stat"><div class="stat-num">110L</div><div class="stat-lbl"><span data-lang="it">Laurea magistrale con lode</span><span data-lang="en" style="display:none">Master's degree cum laude</span></div></div>
+  <p class="s-label"><span data-lang="it">Chi siamo</span><span data-lang="en" style="display:none">About</span></p>
+  <h2 class="s-title"><span data-lang="it">Consulenza strategica e collaborazione</span><span data-lang="en" style="display:none">Strategic consulting and collaboration</span></h2>
+
+  <p class="about-body" data-lang="it">Mentre il mondo insegue l'intelligenza artificiale generale, noi abbiamo posto l'attenzione sulle imprese e i centri di ricerca, sviluppando soluzioni ad hoc per aumentare il loro impatto sul mercato. Non solo risolvere problemi, ma aumentare la realtà fisica per sbloccare nuove capacità inedite.</p>
+  <p class="about-body" data-lang="en" style="display:none">While the world chases artificial general intelligence, we focus on businesses and research centers, developing tailored solutions to increase their market impact. Not just solving problems, but augmenting physical reality to unlock new, unprecedented capabilities.</p>
+
+  <p class="about-body" data-lang="it">Crediamo che il valore stia in soluzioni semplici a problemi complessi, ascoltando e rispondendo ai bisogni dei nostri clienti. Edgine Studio è uno studio di sviluppo software e consulenza informatica a Catania. Il nostro modo di lavorare sull'intelligenza artificiale si riassume in tre parole:</p>
+  <p class="about-body" data-lang="en" style="display:none">We believe value lies in simple solutions to complex problems, listening and responding to our clients' needs. Edgine Studio is a software development and IT consulting studio based in Catania. Our approach to artificial intelligence comes down to three words:</p>
+
+  <div class="pillars">
+    <div class="pillar"><div class="pillar-word" data-lang="it">Integrare</div><div class="pillar-word" data-lang="en" style="display:none">Integrate</div><div class="pillar-sub" data-lang="it">nei sistemi esistenti</div><div class="pillar-sub" data-lang="en" style="display:none">into existing systems</div></div>
+    <div class="pillar"><div class="pillar-word" data-lang="it">Verticalizzare</div><div class="pillar-word" data-lang="en" style="display:none">Specialize</div><div class="pillar-sub" data-lang="it">sul tuo settore</div><div class="pillar-sub" data-lang="en" style="display:none">on your industry</div></div>
+    <div class="pillar"><div class="pillar-word" data-lang="it">Automatizzare</div><div class="pillar-word" data-lang="en" style="display:none">Automate</div><div class="pillar-sub" data-lang="it">ciò che rallenta</div><div class="pillar-sub" data-lang="en" style="display:none">what slows you down</div></div>
   </div>
+
+  <p class="s-label" style="margin-top:2rem"><span data-lang="it">Cosa possiamo fare per voi</span><span data-lang="en" style="display:none">What we can do for you</span></p>
+  <div class="uc-grid">
+    <div class="uc-card"><span class="uc-sector" data-lang="it">Per i negozi di arredo e design</span><span class="uc-sector" data-lang="en" style="display:none">For furniture & design stores</span><p data-lang="it">Chatbot di assistenza e generatori di immagini integrabili nel sito web, per far vivere al cliente l'esperienza del prodotto prima dell'acquisto</p><p data-lang="en" style="display:none">Conversational assistants and image generators embedded in your website, letting customers experience the product before buying</p></div>
+    <div class="uc-card"><span class="uc-sector" data-lang="it">Per il commercio retail</span><span class="uc-sector" data-lang="en" style="display:none">For retail businesses</span><p data-lang="it">Marketing di precisione generato dall'AI: contenuti su misura partendo dal tuo catalogo, coerenti con il tuo brand</p><p data-lang="en" style="display:none">AI-generated precision marketing: tailored content from your catalogue, consistent with your brand identity</p></div>
+    <div class="uc-card"><span class="uc-sector" data-lang="it">Per hospitality e ristorazione</span><span class="uc-sector" data-lang="en" style="display:none">For hospitality & food service</span><p data-lang="it">Analisi delle recensioni per orientare le decisioni di investimento e migliorare la soddisfazione degli ospiti</p><p data-lang="en" style="display:none">Review analytics to guide investment decisions and improve guest satisfaction</p></div>
+    <div class="uc-card"><span class="uc-sector" data-lang="it">Per aziende con processi ripetitivi</span><span class="uc-sector" data-lang="en" style="display:none">For companies with repetitive workflows</span><p data-lang="it">Agenti AI per l'automazione di processi documentali, comunicazione e reportistica</p><p data-lang="en" style="display:none">AI agents to automate document workflows, communications, and reporting</p></div>
+    <div class="uc-card"><span class="uc-sector" data-lang="it">Per enti pubblici e sportelli</span><span class="uc-sector" data-lang="en" style="display:none">For public offices & counters</span><p data-lang="it">Sistemi intelligenti di instradamento e gestione delle code per gli sportelli aperti al pubblico</p><p data-lang="en" style="display:none">Intelligent queue management and routing systems for public-facing counters</p></div>
+    <div class="uc-card"><span class="uc-sector" data-lang="it">Per produzione industriale e domotica</span><span class="uc-sector" data-lang="en" style="display:none">For industry & smart home</span><p data-lang="it">Modelli predittivi per la manutenzione preventiva e il controllo delle linee di produzione</p><p data-lang="en" style="display:none">Predictive models for preventive maintenance and production line monitoring</p></div>
+  </div>
+  <p class="uc-footer" data-lang="it">Le possibilità sono innumerevoli — contattateci per scoprire cosa possiamo fare per voi.</p>
+  <p class="uc-footer" data-lang="en" style="display:none">The possibilities are countless — get in touch to find out what we can do for you.</p>
 </section>
 
 <hr class="sep">
 
-<section id="experience">
-  <p class="section-label"><span data-lang="it">Esperienza in Deep Tech</span><span data-lang="en" style="display:none">Deep Tech Experience</span></p>
-  <div class="exp-card">
-    <div class="exp-header">
-      <div>
-        <div class="exp-role">Data Scientist @ Koexai</div>
-        <div class="exp-company" data-lang="it">Centro Nazionale di Ricerca in HPC, Big Data e Quantum Computing </div>
-        <div class="exp-company" data-lang="en" style="display:none">National Center for Research in HPC, Big Data and Quantum Computing</div>
+<!-- SERVICES -->
+<section id="services">
+  <p class="s-label"><span data-lang="it">Servizi Offerti</span><span data-lang="en" style="display:none">Services</span></p>
+  <h2 class="s-title"><span data-lang="it">Soluzioni replicabili e personalizzabili</span><span data-lang="en" style="display:none">Replicable and customizable solutions</span></h2>
+  <p class="s-sub"><span data-lang="it">Sistemi sviluppati e collaudati, adattabili al tuo settore e ai tuoi dati.</span><span data-lang="en" style="display:none">Developed and tested systems, adaptable to your sector and your data.</span></p>
+
+  <div class="svc-grid">
+
+    <!-- 1 -->
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-title"><span data-lang="it">Webapp RAG Multimodale per il Marketing</span><span data-lang="en" style="display:none">Multimodal RAG Webapp for Marketing</span></div>
+        <span class="svc-tag tag-retail">Retail · Arredo</span>
       </div>
-      <!-- <span class="exp-date"><span data-lang="it">Dic 2024 – Mag 2026</span><span data-lang="en" style="display:none">Dec 2024 – May 2026</span></span> -->
-    </div>
-    <div class="exp-item">
-      <strong style="color:var(--text)"><span data-lang="it">Accelerazione inferenza scientifica</span><span data-lang="en" style="display:none">Scientific inference acceleration</span> (ICSC / HPC)</strong> — <span data-lang="it">Ridisegnata la pipeline di inferenza bayesiana per l'analisi di onde gravitazionali tramite decorrelazione dei parametri e metodi HPC. Responsabile del sub-team tecnico e della delivery istituzionale.</span><span data-lang="en" style="display:none">Redesigned the Bayesian inference pipeline for gravitational wave data analysis via parameter decorrelation and HPC methods. Led technical sub-team and managed institutional research delivery.</span>
-    </div>
-    <div class="exp-item">
-      <strong style="color:var(--text)"><span data-lang="it">Automazione HR Time Tracking</span><span data-lang="en" style="display:none">HR Time Tracking Automation</span></strong> — <span data-lang="it">Ridotto il carico di inserimento manuale automatizzando l'estrazione e il reporting delle presenze, migliorando qualità dei dati e gestione HR.</span><span data-lang="en" style="display:none">Cut manual data entry workload by automating extraction and reporting of employee time tracking data, improving data quality and HR management.</span>
-    </div>
-  </div>
-</section>
-
-<hr class="sep">
-
-<section id="projects">
-  <p class="section-label"><span data-lang="it">Progetti autonomi</span><span data-lang="en" style="display:none">Freelance Projects</span></p>
-  <h2 class="section-title"><span data-lang="it">Progetti selezionati</span><span data-lang="en" style="display:none">Selected projects</span></h2>
-  <p class="section-sub"><span data-lang="it">Freelance e accademici — dalla ricerca scientifica alle app di produzione.</span><span data-lang="en" style="display:none">Freelance and academic — from scientific research to production apps.</span></p>
-  <div class="projects-grid">
-
-    <div class="proj-card">
-      <span class="proj-tag tag-freelance">Freelance</span>
-      <div class="proj-title"><span data-lang="it">Sistema AI Multi-Agente</span><span data-lang="en" style="display:none">Agentic AI Co-team System</span></div>
-      <div class="proj-desc"><span data-lang="it">Sistema multi-agente (CrewAI) che collabora con l'operatore umano, orchestrando task analitici in autonomia e moltiplicando la capacità consulenziale senza aumentare l'headcount.</span><span data-lang="en" style="display:none">Multi-agent system (CrewAI) collaborating with the human operator — autonomously orchestrating analytical tasks and multiplying consulting throughput without scaling headcount.</span></div>
-      <div class="proj-links"><span class="proj-stack"><i class="ti ti-stack-2"></i> CrewAI · LangGraph · Python</span></div>
+      <p class="svc-commercial" data-lang="it">Genera descrizioni prodotto, post social e materiali promozionali partendo dal tuo catalogo. Ogni contenuto riflette il tuo stile, il tuo brand e i tuoi prodotti — su scala, senza perdere coerenza.</p>
+      <p class="svc-commercial" data-lang="en" style="display:none">Generate product descriptions, social posts and promotional materials from your catalogue. Every piece of content reflects your style, your brand, your products — at scale, without losing consistency.</p>
+      <div class="svc-tech">
+        <span class="tech-lbl" data-lang="it">Come funziona</span><span class="tech-lbl" data-lang="en" style="display:none">How it works</span>
+        <p data-lang="it">Pipeline RAG multimodale con retrieval su catalogo testo+immagini e generazione contestuale tramite LLM, integrata in una webapp dedicata.</p>
+        <p data-lang="en" style="display:none">Multimodal RAG pipeline with text+image catalogue retrieval and contextual generation via LLM, integrated into a dedicated webapp.</p>
+      </div>
+      <div class="svc-perfect"><i class="ti ti-target"></i><span data-lang="it"><strong>Perfetto se</strong> hai un catalogo ampio e vuoi automatizzare il marketing senza perdere l'identità di brand.</span><span data-lang="en" style="display:none"><strong>Perfect if</strong> you have a large catalogue and want to automate marketing without losing brand identity.</span></div>
     </div>
 
-    <div class="proj-card">
-      <span class="proj-tag tag-freelance">Freelance — Hospitality</span>
-      <div class="proj-title"><span data-lang="it">NLP per Ottimizzazione CapEx</span><span data-lang="en" style="display:none">Review Analytics for CapEx Optimization</span></div>
-      <div class="proj-desc"><span data-lang="it">Pipeline NLP che converte recensioni degli ospiti in priorità di investimento quantificate, spostando le decisioni CapEx dall'intuizione all'evidenza cliente.</span><span data-lang="en" style="display:none">NLP pipeline converting guest review volumes into quantified investment priorities, shifting hotel CapEx decisions from intuition to customer-evidenced ROI.</span></div>
-      <div class="proj-links"><span class="proj-stack"><i class="ti ti-stack-2"></i> NLP · Optimization · Python</span></div>
+    <!-- 2 -->
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-title"><span data-lang="it">Inpainting Generativo per l'Arredo</span><span data-lang="en" style="display:none">Generative Inpainting for Furniture</span></div>
+        <span class="svc-tag tag-retail">Retail · Lock-in</span>
+      </div>
+      <p class="svc-commercial" data-lang="it">Il cliente carica una foto del suo spazio, sceglie i tuoi prodotti e li vede integrati in casa propria — prima di acquistare. Si innamora di un risultato che solo tu puoi realizzare, nel tuo negozio, con il tuo catalogo.</p>
+      <p class="svc-commercial" data-lang="en" style="display:none">The customer uploads a photo of their space, picks your products, and sees them placed in their own home — before buying. They fall in love with a result only you can deliver, in your store, from your catalogue.</p>
+      <div class="svc-tech">
+        <span class="tech-lbl" data-lang="it">Come funziona</span><span class="tech-lbl" data-lang="en" style="display:none">How it works</span>
+        <p data-lang="it">Interfaccia di inpainting generativo che compone elementi d'arredo del catalogo all'interno di ambienti reali forniti dall'utente, con rendering coerente per materiali e illuminazione.</p>
+        <p data-lang="en" style="display:none">Generative inpainting interface compositing catalogue furniture into real user-supplied environments, with material and lighting-consistent rendering.</p>
+      </div>
+      <div class="svc-perfect"><i class="ti ti-target"></i><span data-lang="it"><strong>Perfetto se</strong> vendi arredo o design e vuoi convertire il visitatore in acquirente aumentando la certezza d'acquisto.</span><span data-lang="en" style="display:none"><strong>Perfect if</strong> you sell furniture or design and want to convert visitors into buyers by reducing purchase uncertainty.</span></div>
     </div>
 
-    <div class="proj-card">
-      <span class="proj-tag tag-freelance">Freelance — Retail</span>
-      <div class="proj-title"><span data-lang="it">Ottimizzazione Supply Chain</span><span data-lang="en" style="display:none">Supply Chain & Network Optimization</span></div>
-      <div class="proj-desc"><span data-lang="it">Motore di matching many-to-many per reti di distribuzione retail, minimizzando i costi logistici e massimizzando l'evasione ordini tramite programmazione intera.</span><span data-lang="en" style="display:none">Many-to-many matching engine for retail distribution networks, minimizing logistics costs and maximizing fulfillment through integer programming.</span></div>
-      <div class="proj-links">
-        <a href="https://supply-chain-optimization.streamlit.app/" target="_blank"><i class="ti ti-player-play"></i> Live App</a>
+    <!-- 3 -->
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-title"><span data-lang="it">Pipeline LLM per Documenti Complessi</span><span data-lang="en" style="display:none">LLM Pipeline for Complex Documents</span></div>
+        <span class="svc-tag tag-ai">AI · Automazione</span>
+      </div>
+      <p class="svc-commercial" data-lang="it">Estrai, analizza e sintetizza le informazioni critiche da bandi pubblici, contratti, paper accademici o report tecnici — in secondi. Zero lettura manuale, zero punti persi.</p>
+      <p class="svc-commercial" data-lang="en" style="display:none">Extract, analyze and synthesize critical information from public tenders, contracts, academic papers or technical reports — in seconds. Zero manual reading, zero missed points.</p>
+      <div class="svc-tech">
+        <span class="tech-lbl" data-lang="it">Come funziona</span><span class="tech-lbl" data-lang="en" style="display:none">How it works</span>
+        <p data-lang="it">Pipeline multistep con LLM per parsing, estrazione di entità, classificazione e sintesi di documenti strutturati, con output configurabile per formato e destinatario.</p>
+        <p data-lang="en" style="display:none">Multistep LLM pipeline for parsing, entity extraction, classification and summarization of structured documents, with configurable output format and audience.</p>
+      </div>
+      <div class="svc-perfect"><i class="ti ti-target"></i><span data-lang="it"><strong>Perfetto se</strong> il tuo team dedica ore a leggere documenti tecnici o bandi per estrarne le parti rilevanti.</span><span data-lang="en" style="display:none"><strong>Perfect if</strong> your team spends hours reading technical documents or tenders to extract the relevant parts.</span></div>
+    </div>
+
+    <!-- 4 -->
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-title"><span data-lang="it">Analisi Fatture e Intelligence Commerciale</span><span data-lang="en" style="display:none">Invoice Analytics & Commercial Intelligence</span></div>
+        <span class="svc-tag tag-data">Data · Dashboard</span>
+      </div>
+      <p class="svc-commercial" data-lang="it">Conosci davvero i tuoi clienti: chi sono, cosa comprano, con quale frequenza e volumi. Una dashboard chiara trasforma i dati di fatturazione in intelligenza commerciale concreta.</p>
+      <p class="svc-commercial" data-lang="en" style="display:none">Really know your customers: who they are, what they buy, how often and in what volumes. A clear dashboard turns billing data into concrete commercial intelligence.</p>
+      <div class="svc-tech">
+        <span class="tech-lbl" data-lang="it">Come funziona</span><span class="tech-lbl" data-lang="en" style="display:none">How it works</span>
+        <p data-lang="it">ETL su dati fatture, analisi semantica delle categorie prodotto, segmentazione demografica inferita (sesso, età, tipologia), e dashboard interattiva con KPI di clientela.</p>
+        <p data-lang="en" style="display:none">ETL on invoice data, semantic product category analysis, inferred demographic segmentation (gender, age, type), and interactive dashboard with customer KPIs.</p>
+      </div>
+      <div class="svc-perfect"><i class="ti ti-target"></i><span data-lang="it"><strong>Perfetto se</strong> hai anni di dati di vendita inutilizzati e vuoi capire chi è il tuo cliente tipo e ottimizzare l'offerta.</span><span data-lang="en" style="display:none"><strong>Perfect if</strong> you have years of untapped sales data and want to understand your typical customer and optimize your offering.</span></div>
+    </div>
+
+    <!-- 5 -->
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-title"><span data-lang="it">Sistema AI Multi-Agente</span><span data-lang="en" style="display:none">Agentic AI Co-team System</span></div>
+        <span class="svc-tag tag-ai">AI · Consulenza</span>
+      </div>
+      <p class="svc-commercial" data-lang="it">Un sistema di agenti AI che lavora al tuo fianco, automatizzando le fasi ripetitive dell'analisi e della consulenza. Più output, stessa squadra.</p>
+      <p class="svc-commercial" data-lang="en" style="display:none">A system of AI agents working alongside your team, automating the repetitive phases of analysis and consulting. More output, same headcount.</p>
+      <div class="svc-tech">
+        <span class="tech-lbl" data-lang="it">Come funziona</span><span class="tech-lbl" data-lang="en" style="display:none">How it works</span>
+        <p data-lang="it">Architettura multi-agente con orchestrazione autonoma di task analitici e integrazione con sorgenti dati esterne, configurabile sul flusso di lavoro del cliente.</p>
+        <p data-lang="en" style="display:none">Multi-agent architecture with autonomous analytical task orchestration and external data source integration, configurable on the client's workflow.</p>
+      </div>
+      <div class="svc-perfect"><i class="ti ti-target"></i><span data-lang="it"><strong>Perfetto se</strong> hai processi consulenziali ripetitivi o un team sovraccarico che vuole scalare la capacità operativa.</span><span data-lang="en" style="display:none"><strong>Perfect if</strong> you have repetitive consulting workflows or an overloaded team looking to scale operational capacity.</span></div>
+    </div>
+
+    <!-- 6 -->
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-title"><span data-lang="it">Analisi Recensioni per l'Ospitalità</span><span data-lang="en" style="display:none">Review Analytics for Hospitality</span></div>
+        <span class="svc-tag tag-data">Hospitality · CapEx</span>
+      </div>
+      <p class="svc-commercial" data-lang="it">Trasforma le recensioni dei tuoi ospiti in una mappa chiara delle priorità di investimento. Sai esattamente dove ogni euro di CapEx produce il massimo ritorno — senza affidarti all'intuizione.</p>
+      <p class="svc-commercial" data-lang="en" style="display:none">Turn your guests' reviews into a clear map of investment priorities. Know exactly where each euro of CapEx delivers maximum return — without relying on intuition.</p>
+      <div class="svc-tech">
+        <span class="tech-lbl" data-lang="it">Come funziona</span><span class="tech-lbl" data-lang="en" style="display:none">How it works</span>
+        <p data-lang="it">Pipeline NLP su grandi volumi di testo non strutturato, con sentiment analysis, topic modeling e scoring di priorità ottimizzato per area d'investimento.</p>
+        <p data-lang="en" style="display:none">NLP pipeline on large volumes of unstructured text, with sentiment analysis, topic modeling and investment-area priority scoring.</p>
+      </div>
+      <div class="svc-perfect"><i class="ti ti-target"></i><span data-lang="it"><strong>Perfetto se</strong> gestisci una struttura ricettiva e vuoi decisioni di investimento fondate su evidenza cliente reale.</span><span data-lang="en" style="display:none"><strong>Perfect if</strong> you run a hospitality property and want investment decisions grounded in real customer evidence.</span></div>
+    </div>
+
+    <!-- 7 -->
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-title"><span data-lang="it">Ottimizzazione Supply Chain</span><span data-lang="en" style="display:none">Supply Chain & Network Optimization</span></div>
+        <span class="svc-tag tag-retail">Retail · Logistica</span>
+      </div>
+      <p class="svc-commercial" data-lang="it">Riduci i costi logistici e aumenta il tasso di evasione degli ordini con un motore di ottimizzazione che trova il percorso migliore in reti di distribuzione complesse.</p>
+      <p class="svc-commercial" data-lang="en" style="display:none">Reduce logistics costs and increase order fulfillment rates with an optimization engine that finds the best path through complex distribution networks.</p>
+      <div class="svc-tech">
+        <span class="tech-lbl" data-lang="it">Come funziona</span><span class="tech-lbl" data-lang="en" style="display:none">How it works</span>
+        <p data-lang="it">Modello di programmazione intera per matching many-to-many tra fornitori e punti vendita, con minimizzazione dei costi e massimizzazione del livello di servizio.</p>
+        <p data-lang="en" style="display:none">Integer programming model for many-to-many matching between suppliers and points of sale, minimizing costs and maximizing service level.</p>
+      </div>
+      <div class="svc-perfect"><i class="ti ti-target"></i><span data-lang="it"><strong>Perfetto se</strong> gestisci una rete distributiva con molti nodi e soffri di inefficienze logistiche o ritardi.</span><span data-lang="en" style="display:none"><strong>Perfect if</strong> you manage a multi-node distribution network and suffer from logistical inefficiencies or delays.</span></div>
+      <div class="svc-links">
+        <a href="https://supply-chain-optimization.streamlit.app/" target="_blank"><i class="ti ti-player-play"></i> Live Demo</a>
         <a href="https://github.com/francescoali/Supply-Chain-Optimization" target="_blank"><i class="ti ti-brand-github"></i> GitHub</a>
       </div>
     </div>
 
-    <div class="proj-card">
-      <span class="proj-tag tag-academic">Academic</span>
-      <div class="proj-title">Fuzzy c-Regression</div>
-      <div class="proj-desc"><span data-lang="it">Nuovo framework matematico per la regressione su dataset con struttura a cluster.</span><span data-lang="en" style="display:none">New mathematical framework for regression in clustered datasets.</span></div>
-      <div class="proj-links"><span class="proj-stack"><i class="ti ti-stack-2"></i> Statistics · Fuzzy Logic</span></div>
-    </div>
-
-    <div class="proj-card">
-      <span class="proj-tag tag-academic">Academic</span>
-      <div class="proj-title">Medical AI Diagnostics</div>
-      <div class="proj-desc"><span data-lang="it">Architetture CNN e ViT per classificazione di immagini (polmonite, cardiache, COVID-19). Architetture diagnostiche ibride uomo–macchina.</span><span data-lang="en" style="display:none">CNN and ViT architectures for pneumonia, cardiac, and COVID-19 image classification. Hybrid human–machine diagnostic architectures.</span></div>
-      <div class="proj-links"><span class="proj-stack"><i class="ti ti-stack-2"></i> CNN · ViT · PyTorch</span></div>
-    </div>
-
-    <div class="proj-card">
-      <span class="proj-tag tag-academic">Academic</span>
-      <div class="proj-title">Neuromorphic Optimization</div>
-      <div class="proj-desc"><span data-lang="it">Reti neurali spiking come solver per problemi combinatoriali NP-hard, unendo neuromorphic computing e operations research.</span><span data-lang="en" style="display:none">Spiking neural networks as solvers for NP-hard combinatorial problems, bridging neuromorphic computing with operations research.</span></div>
-      <div class="proj-links"><span class="proj-stack"><i class="ti ti-stack-2"></i> SNN · OR · Optimization</span></div>
-    </div>
-
   </div>
 </section>
 
 <hr class="sep">
 
-<section id="skills">
-  <p class="section-label">Skills & Stack</p>
-  <h2 class="section-title"><span data-lang="it">Competenze tecniche</span><span data-lang="en" style="display:none">Technical skills</span></h2>
-  <div class="skills-grid">
-    <div class="skill-group">
-      <div class="skill-group-title">AI Engineering</div>
-      <div class="skill-tags">
-        <span class="skill-tag core">CrewAI</span><span class="skill-tag core">LangChain</span><span class="skill-tag core">LangGraph</span><span class="skill-tag core">RAG</span><span class="skill-tag">Sentence Transformers</span><span class="skill-tag">Docling</span><span class="skill-tag">Compressed models</span>
-      </div>
+<!-- RESEARCH -->
+<section id="research">
+  <p class="s-label"><span data-lang="it">Esperienza di Ricerca e Deep Tech</span><span data-lang="en" style="display:none">Research & Deep Tech Experience</span></p>
+  <h2 class="s-title"><span data-lang="it">Radici nella scienza</span><span data-lang="en" style="display:none">Rooted in science</span></h2>
+  <p class="s-sub"><span data-lang="it">La solidità metodologica che sta alla base di ogni soluzione che costruiamo.</span><span data-lang="en" style="display:none">The methodological rigor behind every solution we build.</span></p>
+
+  <div class="exp-card">
+    <div class="exp-role">Data Scientist · ICSC</div>
+    <div class="exp-company" data-lang="it">Centro Nazionale di Ricerca in HPC, Big Data e Quantum Computing <span style="color:var(--text3);font-size:11px">(tramite Koexai S.r.l.)</span></div>
+    <div class="exp-company" data-lang="en" style="display:none">National Center for Research in HPC, Big Data and Quantum Computing <span style="color:var(--text3);font-size:11px">(via Koexai S.r.l.)</span></div>
+    <div class="exp-item"><strong style="color:var(--text)"><span data-lang="it">Accelerazione inferenza scientifica</span><span data-lang="en" style="display:none">Scientific inference acceleration</span> (HPC)</strong> — <span data-lang="it">Ridisegnata la pipeline di inferenza bayesiana per l'analisi di onde gravitazionali tramite decorrelazione dei parametri. Responsabile del sub-team tecnico e della delivery istituzionale.</span><span data-lang="en" style="display:none">Redesigned the Bayesian inference pipeline for gravitational wave data analysis via parameter decorrelation. Led technical sub-team and managed institutional research delivery.</span></div>
+    <div class="exp-item"><strong style="color:var(--text)"><span data-lang="it">Automazione HR Time Tracking</span><span data-lang="en" style="display:none">HR Time Tracking Automation</span></strong> — <span data-lang="it">Automatizzata l'estrazione e il reporting delle presenze, migliorando qualità dei dati e gestione HR.</span><span data-lang="en" style="display:none">Automated extraction and reporting of attendance data, improving data quality and HR management.</span></div>
+  </div>
+
+  <div class="acad-grid">
+    <div class="acad-card">
+      <span class="acad-tag">Academic</span>
+      <div class="acad-title">Medical AI Diagnostics</div>
+      <div class="acad-desc"><span data-lang="it">Architetture CNN e ViT per classificazione di immagini mediche (polmonite, cardiache, COVID-19). Architetture diagnostiche ibride uomo–macchina.</span><span data-lang="en" style="display:none">CNN and ViT architectures for medical image classification (pneumonia, cardiac, COVID-19). Hybrid human–machine diagnostic architectures.</span></div>
+      <div class="acad-stack">CNN · ViT · PyTorch</div>
     </div>
-    <div class="skill-group">
-      <div class="skill-group-title">ML & Data Science</div>
-      <div class="skill-tags">
-        <span class="skill-tag core">Python</span><span class="skill-tag core">Deep Learning</span><span class="skill-tag core">Computer Vision</span><span class="skill-tag core">Bayesian Inference</span><span class="skill-tag">NLP / LLMs</span><span class="skill-tag">Monte Carlo</span><span class="skill-tag">JAX</span><span class="skill-tag">Numba</span><span class="skill-tag">R</span>
-      </div>
+    <div class="acad-card">
+      <span class="acad-tag">Academic</span>
+      <div class="acad-title">Neuromorphic Optimization</div>
+      <div class="acad-desc"><span data-lang="it">Reti neurali spiking come solver per problemi combinatoriali NP-hard, unendo neuromorphic computing e operations research.</span><span data-lang="en" style="display:none">Spiking neural networks as solvers for NP-hard combinatorial problems, bridging neuromorphic computing with operations research.</span></div>
+      <div class="acad-stack">SNN · OR · Optimization</div>
     </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Optimization & OR</div>
-      <div class="skill-tags">
-        <span class="skill-tag core">Linear & Convex Programming</span><span class="skill-tag core">Network Optimization</span><span class="skill-tag">Metaheuristics</span><span class="skill-tag">OR-Tools</span><span class="skill-tag">py3dbp</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">MLOps & Deployment</div>
-      <div class="skill-tags">
-        <span class="skill-tag core">Docker</span><span class="skill-tag core">FastAPI</span><span class="skill-tag">AWS</span><span class="skill-tag">Railway</span><span class="skill-tag">Streamlit</span><span class="skill-tag">Git</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Data Engineering</div>
-      <div class="skill-tags">
-        <span class="skill-tag core">SQL / RDBMS</span><span class="skill-tag">ETL/ELT</span><span class="skill-tag">REST APIs</span><span class="skill-tag">PySpark</span><span class="skill-tag">Airflow</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Visualization</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Tableau</span><span class="skill-tag">Seaborn</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">HTML/CSS/JS</span>
-      </div>
+    <div class="acad-card">
+      <span class="acad-tag">Academic</span>
+      <div class="acad-title">Fuzzy c-Regression</div>
+      <div class="acad-desc"><span data-lang="it">Nuovo framework matematico per la regressione su dataset con struttura a cluster.</span><span data-lang="en" style="display:none">New mathematical framework for regression in clustered datasets.</span></div>
+      <div class="acad-stack">Statistics · Fuzzy Logic · R</div>
     </div>
   </div>
 </section>
 
 <hr class="sep">
 
+<!-- PUBLICATIONS -->
 <section id="publications">
-  <p class="section-label"><span data-lang="it">Pubblicazioni</span><span data-lang="en" style="display:none">Publications</span></p>
-  <h2 class="section-title"><span data-lang="it">Ricerca scientifica</span><span data-lang="en" style="display:none">Research publications</span></h2>
+  <p class="s-label"><span data-lang="it">Pubblicazioni</span><span data-lang="en" style="display:none">Publications</span></p>
+  <h2 class="s-title"><span data-lang="it">Ricerca scientifica</span><span data-lang="en" style="display:none">Scientific research</span></h2>
   <div class="pub-card">
     <div class="pub-authors">Villa, E. et al.</div>
     <div class="pub-title">PTA data analysis II: Noise and SGWB inference through parameter decorrelation</div>
@@ -321,33 +374,46 @@ footer p{font-size:12px;color:var(--text3)}
 
 <hr class="sep">
 
+<!-- SKILLS -->
+<section id="skills">
+  <p class="s-label">Stack</p>
+  <div class="skills-wrap">
+    <span class="sk core">Python</span><span class="sk core">LangChain</span><span class="sk core">LangGraph</span><span class="sk core">CrewAI</span><span class="sk core">RAG</span><span class="sk core">FastAPI</span><span class="sk core">Docker</span>
+    <span class="sk">Deep Learning</span><span class="sk">Computer Vision</span><span class="sk">Bayesian Inference</span><span class="sk">NLP / LLMs</span><span class="sk">JAX</span><span class="sk">Numba</span>
+    <span class="sk">OR-Tools</span><span class="sk">Network Optimization</span><span class="sk">Linear Programming</span>
+    <span class="sk">SQL</span><span class="sk">ETL/ELT</span><span class="sk">PySpark</span><span class="sk">REST APIs</span>
+    <span class="sk">AWS</span><span class="sk">Railway</span><span class="sk">Streamlit</span><span class="sk">Tableau</span>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- CONTACT -->
 <section id="contact">
-  <p class="section-label">Contact</p>
-  <h2 class="section-title"><span data-lang="it">Parliamo</span><span data-lang="en" style="display:none">Let's talk</span></h2>
-  <p class="section-sub" style="margin-bottom:2rem"><span data-lang="it">Hai un problema da risolvere con i dati? Scrivimi — rispondo entro 24 ore.</span><span data-lang="en" style="display:none">Got a data problem to solve? Write me — I reply within 24 hours.</span></p>
-  <div class="contact-grid">
-    <div class="contact-card"><i class="ti ti-mail"></i><div class="cc-label">Email</div><div class="cc-val"><a href="mailto:francescoali.2001.siracusa@gmail.com" style="color:var(--accent);font-size:12px">francescoali.2001.siracusa<br>@gmail.com</a></div></div>
-    <div class="contact-card"><i class="ti ti-device-mobile"></i><div class="cc-label"><span data-lang="it">Telefono</span><span data-lang="en" style="display:none">Phone</span></div><div class="cc-val">+39 366 116 1390</div></div>
-    <div class="contact-card"><i class="ti ti-brand-linkedin"></i><div class="cc-label">LinkedIn</div><div class="cc-val"><a href="https://www.linkedin.com/in/francesco-al%C3%AC" target="_blank" style="color:var(--accent)">francesco-alì</a></div></div>
-    <div class="contact-card"><i class="ti ti-brand-github"></i><div class="cc-label">GitHub</div><div class="cc-val"><a href="https://github.com/francescoali" target="_blank" style="color:var(--accent)">francescoali</a></div></div>
+  <p class="s-label">Contact</p>
+  <h2 class="s-title"><span data-lang="it">Parliamo</span><span data-lang="en" style="display:none">Let's talk</span></h2>
+  <p class="s-sub"><span data-lang="it">Hai un problema da risolvere con i dati? Scrivici — rispondiamo entro 24 ore.</span><span data-lang="en" style="display:none">Got a data problem to solve? Write us — we reply within 24 hours.</span></p>
+  <div class="ct-grid">
+    <div class="ct-card"><i class="ti ti-mail"></i><div class="ct-lbl">Email</div><div class="ct-val"><a href="mailto:francescoali@edgine.it" style="color:var(--accent)">francescoali@edgine.it</a></div></div>
+    <div class="ct-card"><i class="ti ti-brand-linkedin"></i><div class="ct-lbl">LinkedIn</div><div class="ct-val"><a href="https://www.linkedin.com/in/francesco-al%C3%AC" target="_blank" style="color:var(--accent)">Francesco Alì</a></div></div>
+    <div class="ct-card"><i class="ti ti-brand-github"></i><div class="ct-lbl">GitHub</div><div class="ct-val"><a href="https://github.com/francescoali" target="_blank" style="color:var(--accent)">francescoali</a></div></div>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Francesco Alì</p>
-  <p style="font-size:11px">AI Engineer · Data Scientist · Optimization Specialist · Catania, Italy</p>
+  <p>© 2025 Edgine Studio · Francesco Alì · Catania</p>
+  <p>AI Engineering · Data Science · Optimization</p>
 </footer>
 
 <script>
-let lang = 'it';
+let lang='it';
 function toggleLang(){
-  lang = lang === 'it' ? 'en' : 'it';
-  const other = lang === 'it' ? 'en' : 'it';
-  document.querySelectorAll('[data-lang]').forEach(el => {
-    el.style.display = el.dataset.lang === lang ? '' : 'none';
+  lang=lang==='it'?'en':'it';
+  document.querySelectorAll('[data-lang]').forEach(el=>{
+    el.style.display=el.dataset.lang===lang?'':'none';
   });
-  document.getElementById('langBtn').textContent = lang === 'it' ? 'EN' : 'IT';
-  document.documentElement.lang = lang;
+  document.getElementById('langBtn').textContent=lang==='it'?'EN':'IT';
+  document.documentElement.lang=lang;
 }
 </script>
 </body>
