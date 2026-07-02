@@ -18,7 +18,18 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 
 nav{position:sticky;top:0;z-index:100;background:rgba(243,248,251,0.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 clamp(1rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;height:50px}
-.nav-logo{font-size:13px;font-weight:800;color:var(--text);letter-spacing:1.5px;text-transform:uppercase}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.nav-logo:hover { text-decoration: none; }
 .nav-links{display:flex;align-items:center;gap:1.5rem}
 .nav-links a{font-size:12.5px;color:var(--text3);transition:color .2s}
 .nav-links a:hover{color:var(--accent2);text-decoration:none}
@@ -121,7 +132,10 @@ footer p{font-size:11px;color:var(--text3)}
 <body>
 
 <nav>
-  <span class="nav-logo">Edgine</span>
+  <a href="/" class="nav-logo">
+    <img src="./logo.png" alt="Edgine" height="50">
+  </a>
+
   <div class="nav-links">
     <a href="#about" data-lang="it">Chi siamo</a>
     <a href="#about" data-lang="en" style="display:none">About</a>
@@ -172,7 +186,7 @@ footer p{font-size:11px;color:var(--text3)}
   <p class="s-label" style="margin-top:2rem"><span data-lang="it">Cosa possiamo fare per voi</span><span data-lang="en" style="display:none">What we can do for you</span></p>
   <div class="uc-grid">
     <div class="uc-card"><span class="uc-sector" data-lang="it">Per i negozi di arredo e design</span><span class="uc-sector" data-lang="en" style="display:none">For furniture & design stores</span><p data-lang="it">Chatbot di assistenza e generatori di immagini integrabili nel sito web, per far vivere al cliente l'esperienza del prodotto prima dell'acquisto</p><p data-lang="en" style="display:none">Conversational assistants and image generators embedded in your website, letting customers experience the product before buying</p></div>
-    <div class="uc-card"><span class="uc-sector" data-lang="it">Per il commercio retail</span><span class="uc-sector" data-lang="en" style="display:none">For retail businesses</span><p data-lang="it">Marketing di precisione generato dall'AI: contenuti su misura partendo dal tuo catalogo, coerenti con il tuo brand</p><p data-lang="en" style="display:none">AI-generated precision marketing: tailored content from your catalogue, consistent with your brand identity</p></div>
+    <div class="uc-card"><span class="uc-sector" data-lang="it">Per il commercio al dettaglio</span><span class="uc-sector" data-lang="en" style="display:none">For retail businesses</span><p data-lang="it">Marketing di precisione generato dall'AI: contenuti su misura partendo dal tuo catalogo, coerenti con il tuo brand</p><p data-lang="en" style="display:none">AI-generated precision marketing: tailored content from your catalogue, consistent with your brand identity</p></div>
     <div class="uc-card"><span class="uc-sector" data-lang="it">Per hospitality e ristorazione</span><span class="uc-sector" data-lang="en" style="display:none">For hospitality & food service</span><p data-lang="it">Analisi delle recensioni per orientare le decisioni di investimento e migliorare la soddisfazione degli ospiti</p><p data-lang="en" style="display:none">Review analytics to guide investment decisions and improve guest satisfaction</p></div>
     <div class="uc-card"><span class="uc-sector" data-lang="it">Per aziende con processi ripetitivi</span><span class="uc-sector" data-lang="en" style="display:none">For companies with repetitive workflows</span><p data-lang="it">Agenti AI per l'automazione di processi documentali, comunicazione e reportistica</p><p data-lang="en" style="display:none">AI agents to automate document workflows, communications, and reporting</p></div>
     <div class="uc-card"><span class="uc-sector" data-lang="it">Per enti pubblici e sportelli</span><span class="uc-sector" data-lang="en" style="display:none">For public offices & counters</span><p data-lang="it">Sistemi intelligenti di instradamento e gestione delle code per gli sportelli aperti al pubblico</p><p data-lang="en" style="display:none">Intelligent queue management and routing systems for public-facing counters</p></div>
@@ -195,7 +209,7 @@ footer p{font-size:11px;color:var(--text3)}
     <!-- 1 -->
     <div class="svc-card">
       <div class="svc-top">
-        <div class="svc-title"><span data-lang="it">Webapp RAG Multimodale per il Marketing</span><span data-lang="en" style="display:none">Multimodal RAG Webapp for Marketing</span></div>
+        <div class="svc-title"><span data-lang="it">Webapp Generativa Multimodale per il Marketing</span><span data-lang="en" style="display:none">Multimodal Generative Webapp for Marketing</span></div>
         <span class="svc-tag tag-retail">Retail · Arredo</span>
       </div>
       <p class="svc-commercial" data-lang="it">Genera descrizioni prodotto, post social e materiali promozionali partendo dal tuo catalogo. Ogni contenuto riflette il tuo stile, il tuo brand e i tuoi prodotti — su scala, senza perdere coerenza.</p>
@@ -221,7 +235,7 @@ footer p{font-size:11px;color:var(--text3)}
         <p data-lang="it">Interfaccia di inpainting generativo che compone elementi d'arredo del catalogo all'interno di ambienti reali forniti dall'utente, con rendering coerente per materiali e illuminazione.</p>
         <p data-lang="en" style="display:none">Generative inpainting interface compositing catalogue furniture into real user-supplied environments, with material and lighting-consistent rendering.</p>
       </div>
-      <div class="svc-perfect"><i class="ti ti-target"></i><span data-lang="it"><strong>Perfetto se</strong> vendi arredo o design e vuoi convertire il visitatore in acquirente aumentando la certezza d'acquisto.</span><span data-lang="en" style="display:none"><strong>Perfect if</strong> you sell furniture or design and want to convert visitors into buyers by reducing purchase uncertainty.</span></div>
+      <div class="svc-perfect"><i class="ti ti-target"></i><span data-lang="it"><strong>Perfetto se</strong> vendi arredo o design e vuoi convertire il visitatore in acquirente aumentando la probabilità d'acquisto.</span><span data-lang="en" style="display:none"><strong>Perfect if</strong> you sell furniture or design and want to convert visitors into buyers by reducing purchase uncertainty.</span></div>
     </div>
 
     <!-- 3 -->
@@ -389,7 +403,7 @@ footer p{font-size:11px;color:var(--text3)}
 <section id="contact">
   <p class="s-label">Contact</p>
   <h2 class="s-title"><span data-lang="it">Parliamo</span><span data-lang="en" style="display:none">Let's talk</span></h2>
-  <p class="s-sub"><span data-lang="it">Hai un problema da risolvere con i dati? Scrivici — rispondiamo entro 24 ore.</span><span data-lang="en" style="display:none">Got a data problem to solve? Write us — we reply within 24 hours.</span></p>
+  <p class="s-sub"><span data-lang="it">Hai programmato di inserire l'IA nei tuoi processi? Scrivici — rispondiamo entro 48 ore.</span><span data-lang="en" style="display:none">Have you programmed to integrate AI into your processes? Write us — we reply within 48 hours.</span></p>
   <div class="ct-grid">
     <div class="ct-card"><i class="ti ti-mail"></i><div class="ct-lbl">Email</div><div class="ct-val"><a href="mailto:francescoali@edgine.it" style="color:var(--accent)">francescoali@edgine.it</a></div></div>
     <div class="ct-card"><i class="ti ti-brand-linkedin"></i><div class="ct-lbl">LinkedIn</div><div class="ct-val"><a href="https://www.linkedin.com/in/francesco-al%C3%AC" target="_blank" style="color:var(--accent)">Francesco Alì</a></div></div>
